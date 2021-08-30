@@ -1,0 +1,45 @@
+body {
+    background-color: #e7e7d3;
+    margin: 15px;
+    padding: 5px;
+ }
+header {
+    display: block;
+}
+tbody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-family: serif;
+    font-style: italic;    
+}
+.top1 {
+    display: flex;
+    background-color: rgba(22, 22, 133, 0.952);
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 50px;
+ }
+i {
+    margin: 15px;
+    padding: 5px;
+   color: black; 
+   }
+   form{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 40%;     
+   }   
+   nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.childrenTop3 {
+    margin: 60px;    
+}  

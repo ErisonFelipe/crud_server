@@ -1,0 +1,21 @@
+header {
+    display: block;
+}
+h1{
+    font-family: serif;
+    font-style: italic;    
+}
+.top1 {
+    display: flex;
+    background-color: rgba(22, 22, 133, 0.952);
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 50px;
+ }
+i {
+    margin: 15px;
+    padding: 5px;
+   color: black; 
+   } 
