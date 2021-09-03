@@ -15,6 +15,9 @@ const LoginController = {
                 res.status(400).json({message: "Senha inválida!"})
             }
             res.status(200).json({message: "Usuário logado com sucesso!"})
+    },
+    token: (req, res) => {
+        res.send(JSON.string(req['tokenData']));
     }
 };
 
