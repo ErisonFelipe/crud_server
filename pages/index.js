@@ -1,7 +1,11 @@
 import Head from 'next/head';
 import Script from 'next/script';
+import React from "react";
+import { Button, Modal, ModalBody, ModalFooter } from "reactstrap";
 
 function Home() {
+    const [modalOpen, setModalOpen] = React.useState(false);
+
     return (
     <div>
         <Head>
@@ -17,9 +21,38 @@ function Home() {
             </div>
             <ul className="menu">
                 <li><a href="home.html" className="menu-btn">Home</a></li>
-                <li><a href="#" className="menu-btn">Cadastre-se</a></li>
+                <li><a className="menu-btn" onClick={() => setModalOpen(!modalOpen)}>Cadastre-se</a></li>
                 <li><a href="#" className="menu-btn">Contatos</a></li>
-            </ul>
+
+      <Modal toggle={() => setModalOpen(!modalOpen)} isOpen={modalOpen} className="modal-open">
+        <div className=" modal-header">
+          <h5 className=" modal-title" id="exampleModalLabel">
+            Modal title
+          </h5>
+          <span
+            aria-label="Close"
+            className="close"
+            type="button"
+            onClick={() => setModalOpen(!modalOpen)}
+          >
+            <i class="fa-solid fa-xmark">X</i>
+          </span>
+        </div>
+        <ModalBody>...</ModalBody>
+        <ModalFooter>
+          <Button
+            color="secondary"
+            type="button"
+            onClick={() => setModalOpen(!modalOpen)}
+          >
+            Close
+          </Button>
+          <Button color="primary" type="button">
+            Save changes
+          </Button>
+        </ModalFooter>
+      </Modal>
+            </ul>                   
             <div className="menu-btn">
                 <i className="fas fa-bars"></i>
                 
@@ -89,8 +122,8 @@ function Home() {
     <footer>
       <span>Create By - <a href="">Erison Felipe</a></span>
     </footer>
-    <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" strategy="beforeInteractive"/>
-    <Script src="cunstom.js" strategy="afterInteractive"/>
+    <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" strategy="beforeInteractive"/>   
+    <Script src="cunstom.js" strategy="afterInteractive"/>    
     </div>
     )
   }
