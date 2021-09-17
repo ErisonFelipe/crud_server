@@ -11,7 +11,7 @@ function Home() {
         <Head>
         <meta charSet="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />        
         <title>Portifolio</title>
         </Head>
         <nav className="navbar">        
@@ -23,35 +23,91 @@ function Home() {
                 <li><a href="home.html" className="menu-btn">Home</a></li>
                 <li><a className="menu-btn" onClick={() => setModalOpen(!modalOpen)}>Cadastre-se</a></li>
                 <li><a href="#" className="menu-btn">Contatos</a></li>
-
-      <Modal toggle={() => setModalOpen(!modalOpen)} isOpen={modalOpen} className="modal-open">
+      <section className="modal">
+      <Modal toggle={() => setModalOpen(!modalOpen)} isOpen={modalOpen} className="max-width">
         <div className=" modal-header">
           <h5 className=" modal-title" id="exampleModalLabel">
-            Modal title
+            Cadastrar
           </h5>
-          <span
+          <div
             aria-label="Close"
             className="close"
             type="button"
             onClick={() => setModalOpen(!modalOpen)}
-          >
-            <i class="fa-solid fa-xmark">X</i>
-          </span>
+          >            
+          </div>
         </div>
-        <ModalBody>...</ModalBody>
+        <ModalBody>
+          <div className="modal-body">
+            <div>
+            <label >Nome: </label>
+            <input type="text" className="form" placeholder="Digite seu nome"/>            
+            <label >Sobrenome: </label>
+            <input type="text" className="form" placeholder="Digite seu sobrenome"/>
+            </div>
+            <div>
+            <label >Data de Aniversário: </label>
+            <input type="date" className="form" placeholder="Digite sua data de nascimento"/>            
+            <label >Telefone: </label>
+            <input type="tel" className="form" placeholder="Ex: 00 12345678" pattern="[0-9]{2}-[0-9]{8}"/>
+            </div>
+            <div>
+            <label>Email: </label>
+            <input type="email" className="form" placeholder="Digite um email válido"/>            
+            <label>Senha: </label>
+            <input type="password" className="form" placeholder="Crie uma senha"/>
+            </div>
+            <div>
+            <label>Escolha um estado:</label>
+            <select className="form">
+              <option value="ac">AC</option>
+              <option value="al">AL</option>
+              <option value="ap">AP</option>
+              <option value="am">AM</option>
+              <option value="ba">BA</option>
+              <option value="ce">CE</option>
+              <option value="df">DF</option>
+              <option value="es">ES</option>
+              <option value="go">GO</option>
+              <option value="MA">MA</option>
+              <option value="MT">MT</option>
+              <option value="ms">MS</option>
+              <option value="mg">MG</option>
+              <option value="pa">PA</option>
+              <option value="pb">PB</option>
+              <option value="pr">PR</option>
+              <option value="pe">PE</option>
+              <option value="pi">PI</option>
+              <option value="RJ">RJ</option>
+              <option value="RN">RN</option>
+              <option value="rs">RS</option>
+              <option value="ro">RO</option>
+              <option value="rr">RR</option>
+              <option value="sc">SC</option>
+              <option value="sp">SP</option>
+              <option value="se">SE</option>
+              <option value="to">TO</option>
+            </select>
+            </div>            
+          </div>
+        </ModalBody>
         <ModalFooter>
-          <Button
-            color="secondary"
-            type="button"
-            onClick={() => setModalOpen(!modalOpen)}
-          >
-            Close
-          </Button>
-          <Button color="primary" type="button">
-            Save changes
-          </Button>
+          <div className="modal-footer">
+            <div >
+              
+          <button  className="button" color="secondary" type="button" onClick={() => setModalOpen(!modalOpen)}>
+            Fechar
+          </button>
+          
+          <button className="button" color="primary" type="submit">
+          Enviar
+          </button>
+          
+          </div>
+          </div>
         </ModalFooter>
       </Modal>
+      </section>
             </ul>                   
             <div className="menu-btn">
                 <i className="fas fa-bars"></i>
