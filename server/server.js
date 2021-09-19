@@ -6,6 +6,7 @@ const server = express();
 var UserRouter = require('./routes/user.router');
 var LoginRouter = require('./routes/login.router');
 var LogMiddleware = require('./middleware/log');
+var connectionDb = require('./config/db.config');
 
 server.use((req, res, next)=>{
     res.header("Access-Control-Allow-Origin", "*");
